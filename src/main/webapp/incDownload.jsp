@@ -6,4 +6,9 @@ License:
         String value = request.getParameter("licenseName");
 
         out.println(value);
+		
+		String envValue = System.getEnv("OPENSHIFT_DATA_DIR");
+       out.println("env data: ");
+		       out.println(envValue);
+
     %>
