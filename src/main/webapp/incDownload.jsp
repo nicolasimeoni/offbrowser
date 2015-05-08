@@ -3,7 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.io.*"  %>
 License:
-<%
+<% 
         String name = request.getParameter("name");
 		String dataDir = System.getenv("OPENSHIFT_DATA_DIR");
 
