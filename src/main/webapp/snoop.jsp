@@ -7,7 +7,7 @@
 </HEAD>
 <BODY>
 
-<H1>WebApp JSP Snoop page</H1>
+<H1>WebApp JSP Snoop page mod by Niko</H1>
 <img src="images/jbosscorp_logo.png">
 
 <h2>JVM Memory Monitor</h2>
