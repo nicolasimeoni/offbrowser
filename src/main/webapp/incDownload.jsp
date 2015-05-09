@@ -5,22 +5,44 @@
 License:
 <% 
         String name = request.getParameter("name");
+        String chk = request.getParameter("chk");
 		String dataDir = System.getenv("OPENSHIFT_DATA_DIR");
 
         out.println(name);
-		if (name!=null && name.length()>0 && name.length()<20) {
-			String 	filename=dataDir+name+".txt"; 	
-			String str = "print me";
-			//always give the path from root. This way it almost always works.
-			try {   
-				PrintWriter pw = new PrintWriter(new FileOutputStream(filename));
-				pw.println(str);
-				//clean up
-				pw.close();
-			} catch(IOException e) {
-			   out.println(e.getMessage());
+		String error="";
+		if (name!=null && name.length()==Integer.parse(chk)) {
+			String 	filename=dataDir+name+".txt";
+			File f = new File(filename);
+			int counter=0;
+			if (f.exists()) {
+				try {
+					// read file
+					BufferedReader reader = new BufferedReader( new FileReader (f));
+					String line;
+					line = reader.readLine();
+					counter=Integer.parseInt(line);
+				} catch (IOException e) {
+					error=e.toString();
+				}
 			}
-
+			if (error==null || error.length()==0) {
+				counter++;
+				try {   
+					PrintWriter pw = new PrintWriter(new FileOutputStream(f));
+					pw.println(""+counter);
+					//clean up
+					pw.close();
+				} catch(IOException e) {
+					error=e.toString();
+				}
+				out.println(counter);
+			} else {
+				out.println(name);
+			}
+				
+			
+		} else {
+			out.println("error");
 		}
 
 %>
