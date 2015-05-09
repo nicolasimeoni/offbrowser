@@ -10,7 +10,7 @@ License:
 
         out.println(name);
 		String error="";
-		if (name!=null && name.length()==Integer.parseInt(chk)) {
+		if (name!=null && chk!=null && name.length()==Integer.parseInt(chk)) {
 			String 	filename=dataDir+name+".txt";
 			File f = new File(filename);
 			int counter=0;
@@ -21,7 +21,7 @@ License:
 					String line;
 					line = reader.readLine();
 					counter=Integer.parseInt(line);
-				} catch (IOException e) {
+				} catch (Exception e) {
 					error=e.toString();
 				}
 			}
@@ -32,7 +32,7 @@ License:
 					pw.println(""+counter);
 					//clean up
 					pw.close();
-				} catch(IOException e) {
+				} catch(Exception e) {
 					error=e.toString();
 				}
 				out.println(counter);
