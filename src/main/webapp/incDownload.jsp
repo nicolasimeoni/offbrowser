@@ -10,7 +10,7 @@ License:
 
         out.println(name);
 		String error="";
-		if (name!=null && name.length()==Integer.parse(chk)) {
+		if (name!=null && name.length()==Integer.parseInt(chk)) {
 			String 	filename=dataDir+name+".txt";
 			File f = new File(filename);
 			int counter=0;
