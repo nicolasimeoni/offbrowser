@@ -42,8 +42,4 @@
 		} else {
 			out.println("ERROR;"+error);
 		}
-
-%>
-
-<%
 %>
