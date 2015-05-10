@@ -33,8 +33,7 @@
 				} catch(Exception e) {
 					error=e.toString();
 				}
-				out.println("OK;"+name+";");
-				out.println(counter);
+				out.println("OK;"+name+";" + counter);
 			} else {
 				out.println("ERROR;"+error);
 			}
