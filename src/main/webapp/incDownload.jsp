@@ -2,13 +2,11 @@
 <%@ page import="java.lang.management.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.io.*"  %>
-License:
 <% 
         String name = request.getParameter("name");
         String chk = request.getParameter("chk");
 		String dataDir = System.getenv("OPENSHIFT_DATA_DIR");
 
-        out.println(name);
 		String error="";
 		if (name!=null && chk!=null && name.length()==Integer.parseInt(chk)) {
 			String 	filename=dataDir+name+".txt";
@@ -35,14 +33,15 @@ License:
 				} catch(Exception e) {
 					error=e.toString();
 				}
+				out.println("OK;"+name+";");
 				out.println(counter);
 			} else {
-				out.println(name);
+				out.println("ERROR;"+error);
 			}
 				
 			
 		} else {
-			out.println("error");
+			out.println("ERROR;"+error);
 		}
 
 %>
