@@ -7,7 +7,7 @@
 <body>
 <center><h1>Active Licenses</h1></center>
 <br/>
-<table>
+<table border="1">
 <tr><th>Date</th><th>App name</th><th>Counter</th><th>Device ID</th></tr>
 <% 
         String name = request.getParameter("name");
