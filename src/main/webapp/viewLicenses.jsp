@@ -35,10 +35,10 @@
 					}  
 					
 					reader.close();
-					counter=Integer.parseInt(line);
 
 				} catch (Exception e) {
 					error=e.toString();
+					out.print("<!-- "+error+"-->");
 				}
 			}
 			
