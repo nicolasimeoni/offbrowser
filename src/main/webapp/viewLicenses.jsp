@@ -28,7 +28,7 @@
 					
 					while(line != null){
 						StringTokenizer st = new StringTokenizer(line,";");
-						out.print("<tr><td>"+st.next()+"</td><td>"+st.next()+"</td><td>"+st.next()+"</td><td>"+st.next()+"</td></tr>");
+						out.print("<tr><td>"+st.nextToken()+"</td><td>"+st.nextToken()+"</td><td>"+st.nextToken()+"</td><td>"+st.nextToken()+"</td></tr>");
 						line = reader.readLine();
 					}  
 					
