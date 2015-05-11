@@ -17,14 +17,16 @@
 		String error="";
 		if (name!=null && chk!=null && name.length()==Integer.parseInt(chk)) {
 			String 	filename=dataDir+name+".log";
+			out.print("<!-- filename:"+filename +"-->");
 			File f = new File(filename);
-			int counter=0;
 			if (f.exists()) {
+				out.print("<!-- exists-->");
 				try {
 					// read file
 					BufferedReader reader = new BufferedReader( new FileReader (f));
 					String line;
 					line = reader.readLine();
+					out.print("<!-- "+line+"-->");
 					
 					while(line != null){
 						StringTokenizer st = new StringTokenizer(line,";");
@@ -41,6 +43,7 @@
 			}
 			
 		} else {
+			
 		}
 %>
 </table>
